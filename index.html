@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#f5f5f5">
     <meta
       name="description"
-      content="Explore loan information and contact EcoCash-TIM Loans to discuss your options."
+      content="Apply for a loan with EcoCash-TIM Loans. Review all costs and terms before accepting any offer."
     >
-    <title>EcoCash-TIM Loans | Loan information</title>
+    <title>EcoCash-TIM Loans | Loan application</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/animations.css">
@@ -30,51 +30,134 @@
         <div class="intro">
           <h1 id="hero-title">Get a Flex Loan in Minutes</h1>
           <p>
-            Straightforward steps, flexible options and clear terms. Review
-            every cost before accepting an offer.
+            Complete the form to save a local application preview in this
+            browser. It will not be sent to a lender.
           </p>
         </div>
 
-        <div class="amount-panel" aria-label="Loan options depend on eligibility and review">
-          <strong>Flexible</strong>
-          <span>LOAN OPTIONS</span>
+        <div class="amount-panel" aria-label="Loan applications are subject to review">
+          <strong>Loan Application</strong>
+          <span>SUBJECT TO ELIGIBILITY AND REVIEW</span>
         </div>
 
         <p class="terms-note">
-          Available amounts, rates and repayment terms are confirmed during
-          review and disclosed before you accept an offer.
+          This browser-only demo does not send or securely store applications.
+          Do not use it on a shared device or enter sensitive credentials.
         </p>
 
         <button class="primary-button" id="show-application" type="button" aria-expanded="false" aria-controls="application-form">
           Apply Now
         </button>
 
-        <form class="application-form" id="application-form" hidden novalidate>
-          <h2>Start your application</h2>
-          <p class="form-intro">Tell us a little about yourself to get started.</p>
+        <form class="application-form" id="application-form" hidden>
+          <div class="progress-heading">
+            <h2 id="step-title">Personal details</h2>
+            <span id="step-count">Step 1 of 4</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Application progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+            <span id="progress-value"></span>
+          </div>
 
-          <label for="employment-status">Employment Status</label>
-          <select id="employment-status" name="employmentStatus" required>
-            <option value="employed">Employed</option>
-            <option value="self-employed">Self Employed</option>
-            <option value="unemployed">Unemployed</option>
-            <option value="student">Student</option>
-          </select>
+          <fieldset class="form-step" data-step="0">
+            <legend>Personal details</legend>
+            <label for="full-name">Full name</label>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" minlength="2" maxlength="120" required>
 
-          <label for="full-name">Full Name</label>
-          <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Enter your full name" minlength="2" required>
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 0740 613560" minlength="7" maxlength="20" required>
 
-          <label for="email">Email Address</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
 
-          <label for="phone">Phone Number</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 0740 613560" minlength="7" maxlength="20" required>
+            <label for="country">Country</label>
+            <select id="country" name="country" autocomplete="country-name" required>
+              <option value="Zimbabwe">Zimbabwe</option>
+              <option value="Other">Other</option>
+            </select>
 
-          <button class="primary-button" type="submit">Continue</button>
+            <label for="address">Residential address</label>
+            <textarea id="address" name="address" autocomplete="street-address" rows="2" minlength="5" maxlength="300" required></textarea>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="1" hidden>
+            <legend>Employment details</legend>
+            <label for="employment-status">Employment status</label>
+            <select id="employment-status" name="employmentStatus" required>
+              <option value="">Select status</option>
+              <option value="employed">Employed</option>
+              <option value="self-employed">Self-employed</option>
+              <option value="unemployed">Unemployed</option>
+              <option value="student">Student</option>
+            </select>
+
+            <label for="employer">Employer or business name</label>
+            <input id="employer" name="employer" type="text" maxlength="150">
+
+            <label for="monthly-income">Monthly income (USD)</label>
+            <input id="monthly-income" name="monthlyIncome" type="number" min="0" max="100000000" step="0.01" inputmode="decimal" required>
+
+            <label for="employment-duration">Time in current employment/business</label>
+            <select id="employment-duration" name="employmentDuration" required>
+              <option value="">Select duration</option>
+              <option value="under-6-months">Less than 6 months</option>
+              <option value="6-12-months">6–12 months</option>
+              <option value="1-3-years">1–3 years</option>
+              <option value="over-3-years">More than 3 years</option>
+              <option value="not-applicable">Not applicable</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="2" hidden>
+            <legend>Loan details</legend>
+            <label for="requested-amount">Requested amount (USD)</label>
+            <input id="requested-amount" name="requestedAmount" type="number" min="1" max="100000000" step="0.01" inputmode="decimal" required>
+
+            <label for="loan-purpose">Loan purpose</label>
+            <select id="loan-purpose" name="loanPurpose" required>
+              <option value="">Select purpose</option>
+              <option value="personal">Personal expenses</option>
+              <option value="business">Business</option>
+              <option value="education">Education</option>
+              <option value="medical">Medical expenses</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="repayment-months">Preferred repayment period</label>
+            <select id="repayment-months" name="repaymentMonths" required>
+              <option value="">Select period</option>
+              <option value="1">1 month</option>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="12">12 months</option>
+              <option value="24">24 months</option>
+            </select>
+            <p class="terms-note">
+              This is your requested period, not a confirmed offer. No interest
+              or repayment estimate is shown because terms must be confirmed.
+            </p>
+          </fieldset>
+
+          <fieldset class="form-step" data-step="3" hidden>
+            <legend>Review and submit</legend>
+            <dl class="review-list" id="application-review"></dl>
+            <label class="consent-label" for="privacy-consent">
+              <input id="privacy-consent" name="privacyConsent" type="checkbox" required>
+              <span>I understand this demo saves my details in this browser only, does not send them to a lender, and may be accessible to other users of this device.</span>
+            </label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="secondary-button" id="previous-step" type="button" hidden>Back</button>
+            <button class="primary-button" id="next-step" type="button">Continue</button>
+            <button class="primary-button" id="submit-application" type="submit" hidden>Submit application</button>
+          </div>
           <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
-          <p class="privacy-note">
-            Never enter or share your mobile-money PIN, OTP or banking password.
-          </p>
+          <section class="success-panel" id="success-panel" aria-live="polite" tabindex="-1" hidden>
+            <h2>Preview saved on this device</h2>
+            <p>Local reference: <strong id="application-reference"></strong>.</p>
+            <p>This is not a loan application submission. The information stays in this browser and is not sent to EcoCash-TIM Loans or a lender.</p>
+          </section>
+          <p class="privacy-note">Never enter or share your mobile-money PIN, OTP, banking password, or other account credentials.</p>
         </form>
 
         <p class="independent-notice">
