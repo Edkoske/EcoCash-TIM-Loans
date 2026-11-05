@@ -1,125 +1,41 @@
-@media (max-width: 900px) {
-  nav {
-    position: relative;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding: 0.8rem 0;
+@media (max-width: 480px) {
+  .site-header {
+    height: 60px;
+    padding: 0 15px;
   }
 
-  nav > a:first-child {
-    margin-right: auto;
+  .wordmark {
+    font-size: 19px;
   }
 
-  nav button {
-    display: inline-flex;
-    min-height: 42px;
-    align-items: center;
-    padding: 0.45rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--navy);
-    background: var(--white);
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.9rem;
-    font-weight: 700;
+  main {
+    padding: 16px 12px 28px;
   }
 
-  nav ul {
-    display: none;
-    order: 4;
-    width: 100%;
-    align-items: stretch;
-    flex-direction: column;
-    gap: 0;
-    padding: 0.35rem 0;
-    border-top: 1px solid var(--border);
+  .application-card {
+    padding: 25px 19px 21px;
+    border-radius: 20px;
   }
 
-  nav ul.is-open {
-    display: flex;
+  .intro h1 {
+    font-size: 19px;
   }
 
-  nav li a {
-    display: block;
-    padding: 0.65rem 0.2rem;
-  }
-
-  nav > a:last-child {
-    min-height: 42px;
-    padding: 0.55rem 0.9rem;
-    font-size: 0.88rem;
-  }
-
-  main section:first-child {
-    min-height: 0;
-    grid-template-columns: 1fr 0.85fr;
-  }
-
-  main section#products > div {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  main section#how-it-works ol {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .amount-panel strong {
+    font-size: 28px;
   }
 }
 
-@media (max-width: 620px) {
-  nav,
-  main section {
-    width: calc(100% - 2rem);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  nav {
-    min-height: 68px;
-  }
-
-  nav > a:first-child {
-    font-size: 1rem;
-  }
-
-  nav > a:last-child {
-    width: 100%;
-    order: 5;
-  }
-
-  main section:first-child {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding-top: 3.5rem;
-  }
-
-  h1 {
-    font-size: clamp(2.4rem, 12vw, 3.5rem);
-  }
-
-  main section:first-child > div > p:nth-of-type(2) {
-    font-size: 1rem;
-  }
-
-  figure {
-    max-width: 460px;
-    justify-self: center;
-  }
-
-  main section#products > div,
-  main section#how-it-works ol {
-    grid-template-columns: 1fr;
-  }
-
-  main section#about {
-    padding: 2rem 1.4rem;
-  }
-
-  main section#how-it-works {
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  main section#contact {
-    width: calc(100% - 2rem);
-    margin-bottom: 2rem;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,62 +1,17 @@
 @media (prefers-reduced-motion: no-preference) {
-  main section:first-child > div {
-    animation: content-enter 650ms ease-out both;
+  .application-card {
+    animation: card-enter 300ms ease-out both;
   }
 
-  main section:first-child figure {
-    animation: art-enter 750ms 100ms ease-out both;
-  }
-
-  main section:not(:first-child) {
-    animation: section-enter 500ms ease-out both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 20%;
-  }
-
-  @keyframes content-enter {
+  @keyframes card-enter {
     from {
       opacity: 0;
-      transform: translateY(18px);
+      transform: translateY(8px);
     }
 
     to {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  @keyframes art-enter {
-    from {
-      opacity: 0;
-      transform: translate(14px, 12px) rotate(1deg);
-    }
-
-    to {
-      opacity: 1;
-      transform: translate(0, 0) rotate(1deg);
-    }
-  }
-
-  @keyframes section-enter {
-    from {
-      opacity: 0.6;
-      transform: translateY(12px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
